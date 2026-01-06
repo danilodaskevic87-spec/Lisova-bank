@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Лісова Пісня</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+<h2>🌲 Лісова Пісня</h2>
+
+<button onclick="toggleTheme()">🌗 Тема</button>
+
+<div id="loginBox">
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Пароль">
+  <button onclick="login()">Увійти</button>
+</div>
+
+<div id="panel" class="hidden">
+  <p>👤 <b id="name"></b></p>
+  <p>🆔 ID: <b id="idd"></b></p>
+  <p>💰 Баланс: <b><span id="balance">0</span></b></p>
+
+  <a href="services.html"><button>🛎 Послуги</button></a>
+  <a href="transfer.html"><button>💸 Переказ</button></a>
+  <button onclick="logout()">🚪 Вийти</button>
+</div>
+</div>
+
+<script src="app.js"></script>
+<script>
+(async()=>{
+  const {data:{user}}=await sb.auth.getUser();
+  if(user) loadUserFromIndex(user);
+})();
+</script>
+</body>
+</html>
