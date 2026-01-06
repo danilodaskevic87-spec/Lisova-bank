@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Переказ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+<h2>💸 Переказ</h2>
+<p>Баланс: <b><span id="balance">0</span></b></p>
+
+<input id="toIdd" type="number" placeholder="ID отримувача">
+<button onclick="findUser()">Далі</button>
+
+<div id="confirmBox" class="hidden">
+  <p>Отримувач: <b id="toName"></b></p>
+  <input id="amount" type="number" placeholder="Сума">
+  <input id="pin" type="password" maxlength="4" placeholder="PIN">
+  <button onclick="confirmTransfer()">Підтвердити</button>
+</div>
+
+<a href="index.html"><button>← Назад</button></a>
+</div>
+
+<script src="app.js"></script>
+<script>window.onload=loadSessionAndBalance;</script>
+</body>
+</html>
