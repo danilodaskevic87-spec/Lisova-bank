@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Послуги</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+<h2>🛎 Послуги</h2>
+<p>Баланс: <b><span id="balance">0</span></b></p>
+
+<div class="service">💧 Вода <button onclick="buy(5)">-5</button></div>
+<div class="service">🍬 Цукерка <button onclick="buy(3)">-3</button></div>
+
+<p>📦 QR на товар (приклад):</p>
+<pre>{"type":"service","price":5}</pre>
+
+<a href="index.html"><button>← Назад</button></a>
+</div>
+
+<script src="app.js"></script>
+<script>window.onload=loadSessionAndBalance;</script>
+</body>
+</html>
