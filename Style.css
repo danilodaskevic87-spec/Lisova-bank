@@ -1,0 +1,31 @@
+:root{
+  --bg:#020617;
+  --card:#020617;
+  --text:#fff;
+  --accent:#22c55e;
+}
+.light{
+  --bg:#f8fafc;
+  --card:#fff;
+  --text:#020617;
+  --accent:#2563eb;
+}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+.box{
+  background:var(--card);
+  padding:22px;
+  width:420px;
+  border-radius:18px;
+}
+button{background:var(--accent);padding:10px;width:100%;margin-top:8px}
+.hidden{display:none}
+.pulse{animation:pulse .3s}
+@keyframes pulse{50%{transform:scale(1.05)}}
